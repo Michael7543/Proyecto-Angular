@@ -7,7 +7,6 @@ import { ProductComponent } from './product/product.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { StaticModule } from '../static/static.module';
 
-
 const routes: Routes = [
   //Rutas hijas
   {
@@ -26,7 +25,6 @@ const routes: Routes = [
         path: 'catalogue',
         component: CatalogueComponent,
       },
-     
     ],
   },
 ]

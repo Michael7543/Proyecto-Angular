@@ -11,6 +11,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { AuthModule } from './auth/auth.module';
 import { StaticModule } from './static/static.module';
 import { NotfoundModule } from './notfound/notfound.module';
+import { StaticComponent } from './static/static.component';
 
 
 @NgModule({
@@ -18,7 +19,9 @@ import { NotfoundModule } from './notfound/notfound.module';
     AppComponent,
     UserComponent,
     PagesComponent,
-    AuthComponent
+    AuthComponent,
+    StaticComponent,
+    NotfoundComponent
     
   ],
   //imports siempre van los modulos
@@ -28,9 +31,6 @@ import { NotfoundModule } from './notfound/notfound.module';
     PagesModule,
     AuthModule,
     StaticModule,
-    NotfoundModule
-    
-
   ],
   providers: [],
   bootstrap: [AppComponent]
