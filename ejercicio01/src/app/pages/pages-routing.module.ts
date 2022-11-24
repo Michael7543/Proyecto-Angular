@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductComponent } from './product/product.component';
@@ -34,7 +34,8 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    StaticModule
+    StaticModule,
+    RouterModule.forRoot(routes)
   ]
 })
 export class PagesRoutingModule { }
