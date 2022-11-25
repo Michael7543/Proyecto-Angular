@@ -4,15 +4,19 @@ import { NotfoundComponent } from './notfound.component';
 
 
 
+
 @NgModule({
   declarations: [
-    NotfoundComponent
-    
-  ],
-  exports:[
-    NotfoundComponent
+
+
+
 
   ],
+  exports:[
+
+
+  ],
+
   imports: [
     CommonModule
   ]

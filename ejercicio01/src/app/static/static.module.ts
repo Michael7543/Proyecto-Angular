@@ -17,8 +17,6 @@ import { PagesModule } from '../pages/pages.module';
     HeaderComponent,
     NavComponent,
     SidebarComponent,
-
-   
   ],
   exports:[
     BreadcrumbsComponent,
@@ -26,13 +24,9 @@ import { PagesModule } from '../pages/pages.module';
     HeaderComponent,
     NavComponent,
     SidebarComponent,
- 
-
   ],
   imports: [
     CommonModule,
-   
-
   ]
 })
 export class StaticModule { }

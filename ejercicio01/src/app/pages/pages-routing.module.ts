@@ -33,7 +33,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     StaticModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forChild(routes)
   ]
+  //Forchild invoca a los hijos
 })
 export class PagesRoutingModule { }
