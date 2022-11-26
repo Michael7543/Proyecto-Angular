@@ -6,12 +6,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductComponent } from './product/product.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { StaticModule } from '../static/static.module';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  //Rutas hijas
+  
   {
     path: 'dashboard',
     component: PagesComponent,
+    //Rutas hijas
     children: [
       {
         path: '',
@@ -25,6 +27,11 @@ const routes: Routes = [
         path: 'catalogue',
         component: CatalogueComponent,
       },
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
+
     ],
   },
 ]

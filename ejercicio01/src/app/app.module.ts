@@ -9,6 +9,8 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthModule } from './auth/auth.module';
 import { StaticModule } from './static/static.module';
 import { StaticComponent } from './static/static.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { NotfoundModule } from './notfound/notfound.module';
 
 
 
@@ -20,6 +22,8 @@ import { StaticComponent } from './static/static.component';
     PagesComponent,
     AuthComponent,
     StaticComponent,
+    NotfoundComponent
+  
 
 
 
@@ -31,6 +35,8 @@ import { StaticComponent } from './static/static.component';
     PagesModule,
     AuthModule,
     StaticModule,
+    NotfoundModule
+    
 
 
   ],
