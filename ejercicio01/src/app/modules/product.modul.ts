@@ -1,6 +1,6 @@
 import { CategoryModel} from "./category.modul";
 
-interface ProductModel {
+export interface ProductModel {
     id: number;
     title: string;
     price: number;
