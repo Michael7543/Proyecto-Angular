@@ -8,7 +8,8 @@ import { ProductComponent } from './product/product.component';
 import { HomeComponent } from './home/home.component';
 import { StaticModule } from '../static/static.module';
 import { PagesComponent } from './pages.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { ListComponent } from './product/list/list.component';
 
 
 
@@ -21,6 +22,8 @@ import { RouterModule } from '@angular/router';
     AboutComponent,
     ContactComponent,
 
+  
+
 
 
   ],
@@ -30,7 +33,9 @@ import { RouterModule } from '@angular/router';
     ProductComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+
+
 
 
 

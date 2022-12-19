@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductModel } from 'src/app/modules/product.modul';
 import { ProductHttpService } from 'src/app/services/product-http.service';
 
 @Component({
@@ -8,12 +9,14 @@ import { ProductHttpService } from 'src/app/services/product-http.service';
 })
 //ngoninit se ejecuta luego del constructor
 export class ProductComponent implements OnInit {
+  products:ProductModel[] = [];
+
   //httpclient es una clase hacer las peticiones
   constructor(private productHttpService: ProductHttpService) {} //Inyeccion de dependencia
 
   ngOnInit(): void {
     //this.getProduct();
-    //this.getProducts();
+    this.getProducts();
     //this.createProduct();
     //this.updateProduct();
     //this.deleteProduct();
@@ -21,7 +24,8 @@ export class ProductComponent implements OnInit {
   //getAll me devuelve un observable
   getProducts() {
     return this.productHttpService.getAll().subscribe((response) => {
-      console.log(response);
+      this.products = response;
+      //console.log(response);
     });
   }
   //subscribe lista de espera va llegar la respuesta

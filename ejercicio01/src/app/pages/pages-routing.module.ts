@@ -7,6 +7,7 @@ import { ProductComponent } from './product/product.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { StaticModule } from '../static/static.module';
 import { HomeComponent } from './home/home.component';
+import { ListComponent } from './product/list/list.component';
 
 const routes: Routes = [
   
@@ -31,6 +32,8 @@ const routes: Routes = [
         path: 'home',
         component: HomeComponent,
       },
+     
+
     ],
   },
 ]
