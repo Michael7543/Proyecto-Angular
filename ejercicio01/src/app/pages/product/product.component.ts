@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductModel } from 'src/app/modules/product.modul';
+import { ProductModel, UpdateProductDto } from 'src/app/modules/product.modul';
 import { ProductHttpService } from 'src/app/services/product-http.service';
 
 @Component({
@@ -10,10 +10,16 @@ import { ProductHttpService } from 'src/app/services/product-http.service';
 //ngoninit se ejecuta luego del constructor
 export class ProductComponent implements OnInit {
   products:ProductModel[] = [];
+  selectProduct:UpdateProductDto={title:"",price:3,description:""};
 
   //httpclient es una clase hacer las peticiones
-  constructor(private productHttpService: ProductHttpService) {} //Inyeccion de dependencia
+  constructor(private productHttpService: ProductHttpService) {
+    this.initProduct();
+  } //Inyeccion de dependencia
 
+  initProduct(){
+    this.selectProduct = {title:"",price:0,description:""};
+  }
   ngOnInit(): void {
     //this.getProduct();
     this.getProducts();
@@ -61,10 +67,15 @@ export class ProductComponent implements OnInit {
       console.log(response);
     });
   }
-  deleteProduct() {
-    return this.productHttpService.destroy(6).subscribe((response) => {
-      console.log(response);
+  editproduct(product:ProductModel){
+    this.selectProduct = product;
+  }
+  deleteProduct(id:ProductModel['id']) {
+    return this.productHttpService.destroy(id).subscribe((response) => {
+      this.products = this.products.filter(product => product.id != id);
+      //console.log(response);
     });
   }
 }
 //del component llama los metodos al servicio
+//invocar al metodo editproduct traigo el producto edito y lo vuelvo a enviar
