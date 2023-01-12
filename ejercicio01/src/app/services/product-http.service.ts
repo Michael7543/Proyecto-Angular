@@ -10,6 +10,9 @@ import { CreateProductDto, ProductModel, UpdateProductDto } from '../modules/pro
   providedIn: 'root'
 })
 export class ProductHttpService {
+  get(id: any) {
+    throw new Error('Method not implemented.');
+  }
   readonly API_URL:string="https://api.escuelajs.co/api/v1/products";//solo de lectura la vareiable
   constructor(private httpClient: HttpClient) { }//metodos httpclient
   //productmode[]Cuando recuperamos todo el arreglo de objetos

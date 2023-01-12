@@ -8,6 +8,7 @@ import { CatalogueComponent } from './catalogue/catalogue.component';
 import { StaticModule } from '../static/static.module';
 import { HomeComponent } from './home/home.component';
 import { ListComponent } from './product/list/list.component';
+import { FormComponent } from './product/form/form.component';
 
 const routes: Routes = [
   
@@ -23,6 +24,7 @@ const routes: Routes = [
       {
         path: 'product',
         component: ProductComponent,
+        
       },
       {
         path: 'catalogue',
@@ -31,6 +33,10 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent,
+      },
+      {
+        path: 'form/:id',
+        component: FormComponent,
       },
     ],
   },

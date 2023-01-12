@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+      <div class="col text-uppercase text-center">
+        <h2 class="m-4">Producto</h2>
+      </div>
+    </div>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Titulo</label>
+        <input value="{{selectProduct.title}}" type="text"  id="title" class="form-control border-secondary" />
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
+          <label class="form-label">Categoria</label>
+          <input
+            type="text"
+            value="{{selectProduct.category}}"
+            id="category"
+            class="form-control border-secondary"
+          />
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
+          <label class="form-label">Precio</label>
+          <input type="text" value="{{selectProduct.price}}" id="price" class="form-control border-secondary" />
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Descripcion</label>
+        <textarea
+          class="form-control border-secondary"
+          id="description"
+          value ="{{selectProduct.description}}"
+          placeholder=""
+          style="height: 100px"
+        ></textarea>
+      </div>
+      <div class="form-floating mb-3 mt-3">
+        <div class="d-grid gap-2">
+          <button [routerLink]="['../product']" 
+            type="button"
+            id="btn-carts"
+            class="btn"
+            data-bs-toggle="modal"
+            data-bs-target="#modalFormulario">
+            Guardar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div> 

@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     AuthComponent,
     StaticComponent,
     NotfoundComponent
+    
   
 
 

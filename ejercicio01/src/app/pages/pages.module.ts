@@ -7,9 +7,10 @@ import { ContactComponent } from './contact/contact.component';
 import { ProductComponent } from './product/product.component';
 import { HomeComponent } from './home/home.component';
 import { StaticModule } from '../static/static.module';
-import { PagesComponent } from './pages.component';
-import { RouterModule, RouterOutlet } from '@angular/router';
-import { ListComponent } from './product/list/list.component';
+import { RouterModule } from '@angular/router';
+import { ProductModule } from './product/product.module';
+
+
 
 
 
@@ -21,10 +22,7 @@ import { ListComponent } from './product/list/list.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-
   
-
-
 
   ],
   exports:[
@@ -38,11 +36,12 @@ import { ListComponent } from './product/list/list.component';
 
 
 
-
   ],
   imports: [
     CommonModule,
-    StaticModule
+    StaticModule,
+    RouterModule,
+    ProductModule
   ]
 })
 export class PagesModule { }

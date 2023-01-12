@@ -4,6 +4,7 @@ import { PagesRoutingModule } from './pages/pages-routing.module';
 import { AuthRoutingModule } from './auth/auth-routing.module';
 import { CommonModule } from '@angular/common';
 import { NotfoundRoutingModule } from './notfound/notfound-routing.module';
+import { ProductRoutingModule } from './pages/product/product-routing.module';
 
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [],
   imports:[RouterModule.forRoot(routes),
-  PagesRoutingModule,AuthRoutingModule,NotfoundRoutingModule,CommonModule],
+  PagesRoutingModule,AuthRoutingModule,CommonModule,ProductRoutingModule,NotfoundRoutingModule],
 
   exports: [RouterModule],
 })

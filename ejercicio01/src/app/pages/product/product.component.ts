@@ -9,6 +9,7 @@ import { ProductHttpService } from 'src/app/services/product-http.service';
 })
 //ngoninit se ejecuta luego del constructor
 export class ProductComponent implements OnInit {
+  
   products:ProductModel[] = [];
   selectProduct:UpdateProductDto={title:"",price:3,description:""};
 
