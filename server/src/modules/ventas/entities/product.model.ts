@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { CategoryEntity } from "./category.model";
 
 @Entity('products',{schema:'ventasbdd'})
@@ -55,6 +55,24 @@ export class ProductEntity{
         comment:'descripcion del producto'
     })
     description:string;
+
+//antes de insertar y antes de actualizar
+
+ /*    @BeforeInsert()
+    @BeforeUpdate()
+    setEmail(){
+        if(!this.code){
+            return;
+        }
+        this.code = this.code.toLowerCase().trim();
+    }
+    async hashPassword(){
+       if(!this.password){
+        return;
+       }
+       this.password = await Bcrypt.hash(this.hashPassword, 10);
+    } */
+
 }
 
 
