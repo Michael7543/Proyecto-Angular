@@ -25,14 +25,6 @@ search:string; */
 readonly categoryId:number;
 
 
-
-
-@IsOptional()
-@IsString({message:'el campo nomnbre debe ser string'})
-    limit: number;
-    page: number;
-
-
 }
 
 

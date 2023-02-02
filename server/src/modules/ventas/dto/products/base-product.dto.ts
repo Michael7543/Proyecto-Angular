@@ -56,7 +56,7 @@ import {
     @IsNotEmpty(isNotEmptyValidationOptions())
     @IsInt(IsIntValidationOptions())
     @IsString(isNumberValidationOptions())
-    readonly categpryId: number;
+    readonly categoryId: number;
 
 
 

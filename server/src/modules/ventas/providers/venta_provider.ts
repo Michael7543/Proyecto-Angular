@@ -1,8 +1,10 @@
-import { CategoryEntity } from 'src/modules-sv/entities/category.model';
-import { ProductEntity } from 'src/modules-sv/entities/product.model';
-import { DataSource } from 'typeorm';
 
-export ventaProviders = [
+import { RepositoryEnum } from 'src/shared/enums/repository.enum';
+import { DataSource } from 'typeorm';
+import { CategoryEntity } from '../entities/category.model';
+import { ProductEntity } from '../entities/product.model';
+
+export const ventaProviders = [
     {
         provide: RepositoryEnum.PRODUCT_REPOSITORY,
         userFactory: (dataSource: DataSource) =>
