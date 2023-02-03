@@ -2,16 +2,15 @@
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { RepositoryEnum } from 'src/shared/enums/repository.enum';
 import { FindOptionsWhere, ILike, Repository } from 'typeorm';
-import { ServiceResponseHttpModel } from '@shared/models';
 import { plainToInstance } from 'class-transformer';
 import { response } from 'express';
-import { PaginationDto } from '../../dto/pagination/pagination.dto';
-import { CreateCategoryDto } from '../../dto/categories/create-category.dto';
-import { CategoryEntity } from '../../entities/category.model';
-import { FilterCategoryDto } from '../../dto/categories/filter-category.dto';
-import { ReadCategoryDto } from '../../dto/categories/read-category.dto';
-import { UpdateCategoryDto } from '../../dto/categories/update-category.dto';
-import { ReadProductDto } from '../../dto/products/read-product.dto';
+import { PaginationDto } from '../dto/pagination/pagination.dto';
+import { CreateCategoryDto } from '../dto/categories/create-category.dto';
+import { CategoryEntity } from '../entities/category.model';
+import { FilterCategoryDto } from '../dto/categories/filter-category.dto';
+import { ReadCategoryDto } from '../dto/categories/read-category.dto';
+import { UpdateCategoryDto } from '../dto/categories/update-category.dto';
+import { ServiceResponseHttpModel } from 'src/shared/models/service-response-http.model';
 
 @Injectable()
 export class CategoryService {
@@ -21,9 +20,9 @@ export class CategoryService {
         private repository: Repository<CategoryEntity>,
     ) { }
     async create(payload: CreateCategoryDto): Promise<ServiceResponseHttpModel> {
-        const newCategory = this.repository.create(payload); //se crea el producto
-        const categoryCreated = this.repository.save(newCategory); //guardar el producto nuevo creado
-        return { data: plainToInstance(ReadProductDto, categoryCreated) }; //visualizamos
+        const newCategory = this.repository.create(payload); 
+        const categoryCreated = this.repository.save(newCategory); 
+        return { data: plainToInstance(ReadCategoryDto, categoryCreated) }; 
     }
 
     async catalogue(): Promise<ServiceResponseHttpModel> {
@@ -120,7 +119,7 @@ export class CategoryService {
         const newcategory = this.repository.create(payload);
         const categoryCreated = await this.repository.save(newcategory);
 
-        return { data: plainToInstance(ReadProductDto, categoryCreated) };
+        return { data: plainToInstance(ReadCategoryDto, categoryCreated) };
     }
 
     async closecategory(id: string): Promise<ServiceResponseHttpModel> {

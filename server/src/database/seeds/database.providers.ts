@@ -1,7 +1,7 @@
 import { DataSource } from 'typeorm';
 import { ConfigType } from '@nestjs/config';
-import { DataSourceEnum } from '@shared/enums';
 import { config } from '@config';
+import { DataSourceEnum } from 'src/shared/enums/data-source.enum';
 
 export const databaseProviders = [
   {

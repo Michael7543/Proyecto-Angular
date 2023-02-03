@@ -13,18 +13,18 @@ import {
     Query,
   } from '@nestjs/common';
   import { ApiOperation, ApiTags } from '@nestjs/swagger';
-  import { Auth } from '@auth/decorators';
-  import { ResponseHttpModel } from '@shared/models';
-import { CreateProductDto } from '../dto/products/create-product.dto';
-import { FilterProductDto } from '../dto/products/filter-product.dto';
-import { UpdateProductDto } from '../dto/products/update-product.dto';
-import { ProductEntity } from '../entities/product.model';
-import { ProductsService } from '../services/products/products.service';
+  import { ProductEntity } from '../entities/product.model';
+  import { CreateProductDto } from '../dto/products/create-product.dto';
+  import { FilterProductDto } from '../dto/products/filter-product.dto';
+  import { UpdateProductDto } from '../dto/products/update-product.dto';
+  import { ProductsService } from '../services/products.service';
+  import { ResponseHttpModel } from 'src/shared/models/response-http-model';
+  import { Auth } from 'src/modules/auth/decorators';
 
   
   @ApiTags('Products')
   @Controller('products')
-  export class ProductController {
+  export class ProductsController {
     constructor(private productsService: ProductsService) {}
   
     @ApiOperation({ summary: 'Create One' })
@@ -36,7 +36,7 @@ import { ProductsService } from '../services/products/products.service';
   
       return {
         data: serviceResponse.data,
-        message: 'Project created',
+        message: 'Product created',
         title: 'Created',
       };
     }
@@ -50,8 +50,8 @@ import { ProductsService } from '../services/products/products.service';
       return {
         data: serviceResponse.data,
         pagination: serviceResponse.pagination,
-        message: catalogue,
-        title: Catalogue,
+        message: 'catalogue',
+        title: 'Catalogue',
       };
     }
   
@@ -66,7 +66,7 @@ import { ProductsService } from '../services/products/products.service';
       return {
         data: serviceResponse.data,
         pagination: serviceResponse.pagination,
-        message: index,
+        message: 'index',
         title: 'Success',
       };
     }
@@ -76,19 +76,18 @@ import { ProductsService } from '../services/products/products.service';
     @Get(':id')
     @HttpCode(HttpStatus.OK)
     async findOne(
-      @Param('id', ParseUUIDPipe) id: string,
-    ): Promise<ResponseHttpModel> {
+      @Param('id', ParseUUIDPipe) id: string,): Promise<ResponseHttpModel> {
       const serviceResponse = await this.productsService.findOne(id);
   
       return {
         data: serviceResponse.data,
-        message: show ${id},
-        title: Success,
+        message: 'show ${id} ',
+        title: 'Success',
       };
     }
   
     @ApiOperation({ summary: 'Update One' })
-    @Auth()
+   @Auth()
     @Put(':id')
     @HttpCode(HttpStatus.CREATED)
     async update(
@@ -99,8 +98,8 @@ import { ProductsService } from '../services/products/products.service';
   
       return {
         data: serviceResponse.data,
-        message: Product updated ${id},
-        title: Updated,
+        message: 'Product updated ${id}',
+        title: 'Updated',
       };
     }
   
@@ -115,10 +114,11 @@ import { ProductsService } from '../services/products/products.service';
   
       return {
         data: serviceResponse.data,
-        message: Product deleted ${id},
-        title: Deleted,
+        message: 'Product deleted ${id}',
+        title: 'Deleted',
       };
     }
+
   
     @ApiOperation({ summary: 'Remove All' })
     @Auth()
@@ -129,8 +129,8 @@ import { ProductsService } from '../services/products/products.service';
   
       return {
         data: serviceResponse.data,
-        message: Products deleted,
-        title: Deleted,
+        message: 'Products deleted',
+        title: 'Deleted',
       };
     }
   }

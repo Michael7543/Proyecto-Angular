@@ -1,5 +1,5 @@
-
-
+/* eslint-disable prettier/prettier */
+import { IsInt, IsPositive } from "class-validator";
 import { BaseProductDto } from "./base-product.dto";
 
 

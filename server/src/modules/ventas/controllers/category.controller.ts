@@ -12,14 +12,14 @@ import {
     Put,
     Query,
   } from '@nestjs/common';
-  import { ApiOperation, ApiTags } from '@nestjs/swagger';
-  import { Auth } from '@auth/decorators';
-  import { ResponseHttpModel } from '@shared/models';
-import { CategoryService } from '../services/categories/category.service';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { CategoryService } from '../services/category.service';
 import { CreateCategoryDto } from '../dto/categories/create-category.dto';
 import { FilterCategoryDto } from '../dto/categories/filter-category.dto';
 import { UpdateCategoryDto } from '../dto/categories/update-category.dto';
 import { CategoryEntity } from '../entities/category.model';
+import { ResponseHttpModel } from 'src/shared/models/response-http-model';
+import { Auth } from 'src/modules/auth/decorators';
 
   
   @ApiTags('Category')
@@ -50,8 +50,8 @@ import { CategoryEntity } from '../entities/category.model';
       return {
         data: serviceResponse.data,
         pagination: serviceResponse.pagination,
-        message: catalogue,
-        title: Catalogue,
+        message: 'catalogue',
+        title: 'Catalogue',
       };
     }
   
@@ -66,7 +66,7 @@ import { CategoryEntity } from '../entities/category.model';
       return {
         data: serviceResponse.data,
         pagination: serviceResponse.pagination,
-        message: index,
+        message: 'index',
         title: 'Success',
       };
     }
@@ -82,8 +82,8 @@ import { CategoryEntity } from '../entities/category.model';
   
       return {
         data: serviceResponse.data,
-        message: show ${id},
-        title: Success,
+        message: 'show ${id}',
+        title: 'Success',
       };
     }
   
@@ -99,8 +99,8 @@ import { CategoryEntity } from '../entities/category.model';
   
       return {
         data: serviceResponse.data,
-        message: Category updated ${id},
-        title: Updated,
+        message: 'Category updated ${id}',
+        title: 'Updated',
       };
     }
   
@@ -115,8 +115,8 @@ import { CategoryEntity } from '../entities/category.model';
   
       return {
         data: serviceResponse.data,
-        message: Category deleted ${id},
-        title: Deleted,
+        message: 'Category deleted ${id}',
+        title: 'Deleted',
       };
     }
   
@@ -129,8 +129,8 @@ import { CategoryEntity } from '../entities/category.model';
   
       return {
         data: serviceResponse.data,
-        message: Category deleted,
-        title: Deleted,
+        message: 'Category deleted',
+        title: 'Deleted',
       };
     }
   }
